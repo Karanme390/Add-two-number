@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Add Two Numbers</title>
+    <link rel="stylesheet" href="AddTwoNumber-style.css">
+    <style>
+        * {
+	box-sizing: border-box;
+}
+body {
+	font-family: poppins;
+	font-size: 16px;
+	color: #fff;
+}
+.form-box {
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: auto;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 500px;
+	height: 430px;
+}
+.form-box:before {
+	background-image: url("https://i.postimg.cc/8cnYLpfc/ddddd.jpg");
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	content: "";
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	display: block;
+	filter: blur(2px);
+}
+.form-box .header-text {
+	font-size: 32px;
+	font-weight: 600;
+	padding-bottom: 30px;
+	text-align: center;
+}
+.form-box input {
+	margin: 10px 0px;
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	width: 100%;
+	font-size: 18px;
+	font-family: poppins;
+}
+.form-box button {
+	background-color: deepskyblue;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+	padding: 10px;
+	margin: 20px 0px;
+}
+#result{
+	display: none;
+}
+    </style>
+</head>
+<body>
+	<div class="form-box">
+		<div class="header-text">
+			Add Two Numbers
+		</div>
+		<form id="additionForm" onsubmit="return false;">
+            <input placeholder="Enter number 1" type="number" id="number1" required> 
+            <input placeholder="Enter number 2" type="number" id="number2" required> 
+            <input placeholder="Result" type="text" id="result" readonly> 
+            <button type="button" onclick="addNumbers()">Add</button>
+        </form>
+	</div>
+
+    <script>
+        function addNumbers() {
+            var number1 = parseFloat(document.getElementById('number1').value);
+            var number2 = parseFloat(document.getElementById('number2').value);
+            var sum = number1 + number2;
+			document.getElementById("result").style.display="block";
+            document.getElementById('result').value = sum;
+        }
+    </script>
+</body>
+</html>
